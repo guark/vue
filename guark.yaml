@@ -1,0 +1,24 @@
+guark: v1
+
+id: dev.guark.myapp
+name: My App Name
+version: v1.0.0
+license: MIT
+
+window:
+  width: 950
+  height: 700
+  # 0 Width and height are default size
+  # 1 Width and height are minimum bounds
+  # 2 Width and height are maximum bounds
+  # 3 Window size can not be changed by a user
+  hint: 1
+
+log:
+  level: debug
+  output: stderr # stdout, stderr, or path/to/file.log
+
+build:
+  log:
+    level: warning  # change log lovel on build...
+
