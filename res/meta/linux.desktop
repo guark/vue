@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name={{ .Name }}
+Exec={{ .Exec }} %u
+Icon={{ .Icon }}
+Version={{ .Version }}
