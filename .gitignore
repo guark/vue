@@ -1,0 +1,5 @@
+dist/
+build/
+ui/node_modules
+lib/statics.go
+lib/embeds.go
