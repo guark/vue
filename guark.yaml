@@ -14,11 +14,5 @@ window:
   # 3 Window size can not be changed by a user
   hint: 1
 
-log:
-  level: debug
-  output: stderr # stdout, stderr, or path/to/file.log
-
-build:
-  log:
-    level: warning  # change log lovel on build...
-
+logLevel: debug
+logOutput: stderr # stdout, stderr
