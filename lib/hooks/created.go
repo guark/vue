@@ -4,11 +4,10 @@ import (
 	"github.com/guark/guark/app"
 )
 
-type Created struct {
-}
-
 // App created hook.
-func (h Created) Handle(app *app.App) error {
+func Created(app *app.App) {
 
-	return nil
+	app.Log.Debug("App created hook!")
+
+	// App created..
 }
