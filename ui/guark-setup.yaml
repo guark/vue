@@ -1,0 +1,8 @@
+guark: v1
+
+# setup commands
+setup:
+  -
+  cmd: yarn
+  args:
+    - install
