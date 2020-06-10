@@ -1,6 +1,6 @@
 dist/
 build/
 ui/node_modules
-lib/statics.go
+lib/assets.go
 lib/embeds.go
 ui/guark.lock
