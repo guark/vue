@@ -3,11 +3,9 @@ package main
 import (
 	"log"
 
-	"{{.AppPkg}}/lib"
-	"{{.AppPkg}}/lib/funcs"
-  "{{.AppPkg}}/lib/hooks"
-  "{{.AppPkg}}/lib/watchers"
 	"github.com/guark/guark"
+	"github.com/guark/guark/app"
+	"{{AppPkg}}/lib"
 )
 
 var (
@@ -16,17 +14,13 @@ var (
 
 func init() {
 
-	g = guark.New()
-	// g = guark.New(lib.Assets)
-	// g.Watch("network", watchers.NetworkWatcher)
-	// g.Watch("signale", watchers.SignalWatcher)
-	//
-	// Bind exported functions.
-	// g.BindFuncs(lib.Funcs)
-
-	// Bind plugins functions.
-	// g.BindPlugins(lib.Plugins)
-
+	g = guark.New(&app.Config{
+		Hooks:    lib.Hooks,
+		Funcs:    lib.Funcs,
+		Assets:   lib.Assets,
+		Plugins:  lib.Plugins,
+		Watchers: lib.Watchers,
+	})
 }
 
 func main() {
