@@ -30,3 +30,25 @@
   }
 }
 </style>
+
+<script>
+import g from "guark"
+
+export default {
+  name: "App",
+
+  created()
+  {
+    // Call created hook when your UI app created.
+    g.hook("created")
+  },
+
+  mounted()
+  {
+    // Call guark mounted hook when your ui dom ready.
+    // You should call hooks one time only...
+    g.hook("mounted")
+  }
+}
+</script>
+
