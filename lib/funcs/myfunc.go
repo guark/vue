@@ -1,8 +1,14 @@
 package funcs
 
-import "fmt"
+import (
+	"fmt"
 
-func FuncName() {
+	"github.com/guark/guark/app"
+)
 
-	fmt.Println("test")
+func FuncName(c app.Context) (interface{}, error) {
+
+	fmt.Println("Func called " + c.Params.Get("name").(string))
+
+	return nil, nil
 }
