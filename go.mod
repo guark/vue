@@ -1,4 +1,4 @@
-module {{.AppPkg}}
+module {{AppPkg}}
 
 go 1.13
 
