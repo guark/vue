@@ -17,6 +17,7 @@ func init() {
 	g = guark.New(&app.Config{
 		Hooks:    lib.Hooks,
 		Funcs:    lib.Funcs,
+		Embed:    lib.Embeds,
 		Assets:   lib.Assets,
 		Plugins:  lib.Plugins,
 		Watchers: lib.Watchers,
