@@ -4,5 +4,6 @@ Type=Application
 Terminal=false
 Name={{ .Name }}
 Exec=/usr/local/bin/{{ .ID }} %u
-Icon=/usr/share/{{ .ID }}/icons/icon.png
+Icon=/usr/share/{{ .ID }}/datadir/icons/icon.png
 Version={{ .Version }}
+StartupWMClass={{ .ID }}
