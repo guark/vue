@@ -7,7 +7,7 @@ import (
 // App created hook.
 func Created(app *app.App) {
 
-	app.Log.Debug("App created hook!")
+	app.Log.Debug("---- HOOK: App created! ----")
 
 	// App created..
 }
