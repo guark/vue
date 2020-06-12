@@ -7,7 +7,7 @@ import (
 // App mounted hook.
 func Mounted(app *app.App) {
 
-	app.Log.Debug("App mounted hook!")
+	app.Log.Debug("---- HOOK: App mounted! ----")
 
 	// App created..
 }
