@@ -3,6 +3,6 @@
 Type=Application
 Terminal=false
 Name={{ .Name }}
-Exec={{ .Exec }} %u
-Icon={{ .Icon }}
+Exec=/usr/local/bin/{{ .ID }} %u
+Icon=/usr/share/{{ .ID }}/icons/icon.png
 Version={{ .Version }}

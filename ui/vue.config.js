@@ -3,18 +3,10 @@ const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
-// const { useGuarkLockFile, checkBeforeBuild } = require('guark/build')
+const { useGuarkLockFile, checkBeforeBuild } = require('guark/build')
 
 
-// if (err = checkBeforeBuild()) {
-// 		console.error(err.message)
-// 		process.exit(err.code)
-// }
-if (process.env.NODE_ENV == 'production' && !process.env.GUARK_BUILD_DIR) {
-
-	console.error('ERROR: Guark build dir not provided!')
-	process.exit(1)
-}
+checkBeforeBuild()
 
 
 module.exports =
@@ -35,18 +27,8 @@ module.exports =
 	{
 		devServer:
 		{
-			// Roger that.
-			// after: (app, server, compiler) => compiler.hooks.done.tap("Guark", useGuarkLockFile)
-			after: function(app, server, compiler)
-			{
-				compiler.hooks.done.tap('Guark', (params) =>
-				{
-					fs.writeFile(`${process.cwd()}/guark.lock`, 'Do not delete me!', function (err)
-					{
-						if (err) throw err;
-					})
-				})
-			}
+			// After server started you should call useGuarkLockFile.
+			after: (app, server, compiler) => compiler.hooks.done.tap("Guark", useGuarkLockFile)
 		},
 		optimization: {
 			minimizer: [
