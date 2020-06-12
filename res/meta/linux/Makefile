@@ -2,6 +2,7 @@
 
 install:
 	install -C bin/{{ .ID }} /usr/local/bin/{{ .ID }}
+	install -C {{ .ID }}.desktop /usr/local/share/applications/{{ .ID }}.desktop
 	mkdir -p /usr/share/{{ .ID }}
 	cp -r datadir/ /usr/share/{{ .ID }}
 	find /usr/share/{{ .ID }}/ -type d -exec chmod 755 {} \;
