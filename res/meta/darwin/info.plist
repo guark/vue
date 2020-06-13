@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+   <dict>
+      <key>CFBundleDisplayName</key>
+      <string>{{ .Name }}</string>
+      <key>CFBundleExecutable</key>
+      <string>{{ .ID }}</string>
+      <key>CFBundleIconFile</key>
+      <string>{{ .ID }}.icns</string>
+      <key>CFBundleIdentifier</key>
+      <string>{{ .ID }}</string>
+      <key>CFBundlePackageType</key>
+      <string>APPL</string>
+      <key>CFBundleShortVersionString</key>
+      <string>{{ .Version }}</string>
+      <key>CFBundleVersion</key>
+      <string>{{ .Version }}</string>
+      <key>LSApplicationCategoryType</key>
+      <string>public.app-category.developer-tools</string>
+      <key>LSMinimumSystemVersion</key>
+      <string>10.10.0</string>
+      <key>NSAppTransportSecurity</key>
+      <dict>
+         <key>NSAllowsArbitraryLoads</key>
+         <true />
+         <key>NSAllowsLocalNetworking</key>
+         <true />
+         <key>NSExceptionDomains</key>
+         <dict>
+            <key>127.0.0.1</key>
+            <dict>
+               <key>NSIncludesSubdomains</key>
+               <false />
+               <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+               <true />
+               <key>NSTemporaryExceptionAllowsInsecureHTTPSLoads</key>
+               <false />
+               <key>NSTemporaryExceptionMinimumTLSVersion</key>
+               <string>1.0</string>
+               <key>NSTemporaryExceptionRequiresForwardSecrecy</key>
+               <false />
+            </dict>
+            <key>localhost</key>
+            <dict>
+               <key>NSIncludesSubdomains</key>
+               <false />
+               <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+               <true />
+               <key>NSTemporaryExceptionAllowsInsecureHTTPSLoads</key>
+               <false />
+               <key>NSTemporaryExceptionMinimumTLSVersion</key>
+               <string>1.0</string>
+               <key>NSTemporaryExceptionRequiresForwardSecrecy</key>
+               <false />
+            </dict>
+         </dict>
+      </dict>
+      <key>NSHighResolutionCapable</key>
+      <true />
+      <key>NSHumanReadableCopyright</key>
+      <string>Copyright 2020 Your Guark App</string>
+      <key>NSPrincipalClass</key>
+      <string>AtomApplication</string>
+      <key>NSQuitAlwaysKeepsWindows</key>
+      <false />
+      <key>NSRequiresAquaSystemAppearance</key>
+      <false />
+      <key>NSSupportsAutomaticGraphicsSwitching</key>
+      <true />
+   </dict>
+</plist>
