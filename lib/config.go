@@ -2,6 +2,9 @@ package lib
 
 import (
 	"github.com/guark/guark/app"
+	"github.com/guark/plugins/dialog"
+	"github.com/guark/plugins/notify"
+	"github.com/guark/plugins/clipboard"
 	"{{AppPkg}}/lib/funcs"
 	"{{AppPkg}}/lib/hooks"
 )
@@ -18,7 +21,11 @@ var Hooks = app.Hooks{
 }
 
 // App plugins.
-var Plugins = app.Plugins{}
+var Plugins = app.Plugins{
+	"dialog": &dialog.Plugin{},
+	"notify": &notify.Plugin{},
+	"clipboard": &clipboard.Plugin{},
+}
 
 // App watchers.
 var Watchers = []app.Watcher{}
