@@ -22,8 +22,8 @@ var Hooks = app.Hooks{
 
 // App plugins.
 var Plugins = app.Plugins{
-	"dialog": &dialog.Plugin{},
-	"notify": &notify.Plugin{},
+	"dialog":    &dialog.Plugin{},
+	"notify":    &notify.Plugin{},
 	"clipboard": &clipboard.Plugin{},
 }
 
