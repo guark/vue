@@ -1,6 +1,7 @@
 # Guark Vue Template
 Guark Vue.js template.
 
+![Guark Vue Template](https://i.imgur.com/4LDx4OT.png)
 
 ## Install
 
