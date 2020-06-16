@@ -32,7 +32,7 @@ module.exports =
 		},
 		optimization: {
 			minimizer: [
-				new UglifyJsPlugin(),
+//				new UglifyJsPlugin(),
 			],
 		},
 	},
