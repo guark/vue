@@ -12,7 +12,7 @@ window:
   # 1 Width and height are minimum bounds
   # 2 Width and height are maximum bounds
   # 3 Window size can not be changed by a user
-  hint: 1
+  hint: 0
 
 # valid values: debug, info, warn, error, fatal, panic
 logLevel: debug
