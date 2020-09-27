@@ -1,12 +1,10 @@
 # Guark build config file.
 
-ui:
-  - init:
-    cmd: yarn install
-  - serve:
-    cmd: yarn run serve
-  - build:
-    cmd: yarn run build
+setup:
+  - cmd: yarn install
+    dir: ui
+  - cmd: go mod download
+  - cmd: go mod verify
 
 
 linux:
