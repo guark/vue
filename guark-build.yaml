@@ -1,0 +1,22 @@
+# Guark build config file.
+
+ui:
+  - init:
+    cmd: yarn install
+  - serve:
+    cmd: yarn run serve
+  - build:
+    cmd: yarn run build
+
+
+linux:
+  ldflags: ""
+
+darwin:
+  ldflags: ""
+
+windows:
+  cc: /usr/bin/x86_64-w64-mingw32-gcc
+  cxx: /usr/bin/x86_64-w64-mingw32-g++
+  ldflags: "-H windowsgui"
+  windres: /usr/bin/x86_64-w64-mingw32-windres
