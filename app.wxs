@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product
+		Id="*"
+		Codepage="1252"
+		Language="1033"
+		Manufacturer="{{ .Publisher }}"
+		Name="{{ .Name }}"
+		UpgradeCode="{{ .GUID }}"
+		Version="{{ .Ver }}"
+	>
+		<Package
+			Id="*"
+			Comments="{{ .Description }}"
+			Compressed="yes"
+			Description="{{ .Name }} Installer"
+			InstallerVersion="500"
+			Keywords="Installer"
+			Languages="1033"
+			Manufacturer="{{ .Publisher }}"
+			SummaryCodepage="1252"
+		/>
+		<MajorUpgrade DowngradeErrorMessage="A newer version of {{ .Name }} is already installed." />
+		<Media Cabinet="{{ .ID }}.cab" EmbedCab="yes" Id="1" />
+		<Directory Id="TARGETDIR" Name="SourceDir">
+
+			<Directory Id="DesktopFolder" Name="Desktop">
+				<Component Id="ApplicationShortcutDesktop" Guid="{{ guid }}">
+					<Shortcut
+						Id="ApplicationDesktopShortcut"
+						Name="{{ .Name }}"
+						Description="{{ .Name }} Shortcut"
+						Target="[INSTALLDIR]{{ .ID }}.exe"
+						WorkingDirectory="INSTALLDIR"
+					/>
+					<RemoveFolder Id="DesktopFolder" On="uninstall" />
+					<RegistryValue
+						Root="HKCU"
+						Key="Software\Microsoft\{{ guid }}"
+						Name="installed"
+						Type="integer"
+						Value="1"
+						KeyPath="yes"
+					/>
+				</Component>
+			</Directory>
+
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="INSTALLDIR" Name="{{ .ID }}">
+
+					<Component Guid="{{ guid }}" Id="ApplicationFiles" Win64="yes">
+						<File Id="windows_{{ .ID }}" Name="{{ .ID }}.exe" Source="{{ .Source }}/{{ .ID }}.exe" />
+						{{if ne .Engine "chrome" }}
+						<File Id="WebView2Loader" Name="WebView2Loader.dll" Source="{{ .Source }}/WebView2Loader.dll" />
+						<File Id="WebviewLib" Name="webview.dll" Source="{{ .Source }}/webview.dll" />
+						{{end}}
+					</Component>
+
+					<Directory Id="windows_statics" Name="statics">
+						<Component Guid="{{ guid }}" Id="ApplicationStatics" Win64="yes">
+							<File Id="windows_statics_icon.png" Name="icon.png" Source="{{ .Source }}/statics/icon.png" />
+						</Component>
+					</Directory>
+
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder" />
+		</Directory>
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+		<Feature
+			ConfigurableDirectory="INSTALLDIR"
+			Description="The complete package"
+			Display="expand"
+			Id="Complete"
+			Level="1"
+			Title="{{ .Name }} {{ .Version }}"
+		>
+			<Feature
+				Absent="disallow"
+				Description="{{ .Description }}"
+				Id="MainProgram"
+				Level="1"
+				Title="{{ .Name }}"
+			>
+				<ComponentRef Id="ApplicationShortcutDesktop" />
+				<ComponentRef Id="ApplicationFiles" />
+				<ComponentRef Id="ApplicationStatics" />
+			</Feature>
+		</Feature>
+	</Product>
+</Wix>

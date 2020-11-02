@@ -1,6 +1,6 @@
 dist/
-build/
-ui/node_modules
-lib/assets.go
-lib/embed.go
+guark.syso
+bundler.yaml
+ui/node_modules/
 ui/guark.lock
+lib/embed.go

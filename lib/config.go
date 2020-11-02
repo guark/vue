@@ -2,16 +2,16 @@ package lib
 
 import (
 	"github.com/guark/guark/app"
+	"github.com/guark/plugins/clipboard"
 	"github.com/guark/plugins/dialog"
 	"github.com/guark/plugins/notify"
-	"github.com/guark/plugins/clipboard"
 	"{{AppPkg}}/lib/funcs"
 	"{{AppPkg}}/lib/hooks"
 )
 
 // Exposed functions to guark Javascript api.
 var Funcs = app.Funcs{
-	"hello_my_func": funcs.FuncName,
+	"hello_world": funcs.HelloWorld,
 }
 
 // App hooks.
@@ -26,6 +26,3 @@ var Plugins = app.Plugins{
 	"notify":    &notify.Plugin{},
 	"clipboard": &clipboard.Plugin{},
 }
-
-// App watchers.
-var Watchers = []app.Watcher{}

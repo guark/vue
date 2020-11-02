@@ -1,34 +1,29 @@
 package main
 
 import (
-	"log"
-
-	"github.com/guark/guark"
 	"github.com/guark/guark/app"
+	"github.com/guark/guark/log"
+	"github.com/guark/guark/engine"
 	"{{AppPkg}}/lib"
 )
 
-var (
-	g *guark.Guark
-)
-
-func init() {
-
-	g = guark.New(&app.Config{
-		Hooks:    lib.Hooks,
-		Funcs:    lib.Funcs,
-		Embed:    lib.Embeds,
-		Assets:   lib.Assets,
-		Plugins:  lib.Plugins,
-		Watchers: lib.Watchers,
-	})
-}
-
 func main() {
 
-	defer g.Exit()
+	a := &app.App{
+		Log:     log.New("app"),
+		Hooks:   lib.Hooks,
+		Funcs:   lib.Funcs,
+		Embed:   lib.Embeds,
+		Plugins: lib.Plugins,
+	}
 
-	if err := g.Run(); err != nil {
-		log.Fatal(err)
+	if err := a.Use(engine.New(a)); err != nil {
+		a.Log.Fatal(err)
+	}
+
+	defer a.Quit()
+
+	if err := a.Run(); err != nil {
+		a.Log.Fatal(err)
 	}
 }

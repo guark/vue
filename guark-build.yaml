@@ -4,8 +4,8 @@ setup:
   - cmd: yarn install
     dir: ui
   - cmd: go mod download
+  - cmd: go mod tidy
   - cmd: go mod verify
-
 
 linux:
   ldflags: ""

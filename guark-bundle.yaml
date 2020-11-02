@@ -1,0 +1,12 @@
+id: {{ .ID }}
+name: {{ .Name }}
+version: {{ .Version }}
+publisher: Example LTD
+description: Your app description here.
+bundles:
+  - type: msi
+    source: dist/windows
+    output: dist/{{ .ID }}.msi
+    options:
+      guid: d8cb43ce-0225-429c-850e-77debcb0fe99 # put your own windows UpgradeCode UUID here.
+      template: app.wxs

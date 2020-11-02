@@ -5,9 +5,9 @@ import (
 )
 
 // App created hook.
-func Created(app *app.App) {
+func Created(a *app.App) error {
 
-	app.Log.Debug("---- HOOK: App created! ----")
+	a.Log.Info("---- HOOK: App created! ----")
 
-	// App created..
+	return nil
 }

@@ -1,18 +1,28 @@
 guark: v1
 
-id: dev.guark.myapp
-name: My App Name
+# App id must be unique.
+id: GuarkDemo
+
+# Your App name.
+name: Guark Demo
+
+# App version.
 version: v1.0.0
+
+# App license slug name.
 license: MIT
 
-window:
-  width: 950
-  height: 700
-  # 0 Width and height are default size
-  # 1 Width and height are minimum bounds
-  # 2 Width and height are maximum bounds
-  # 3 Window size can not be changed by a user
-  hint: 0
-
-# valid values: debug, info, warn, error, fatal, panic
+# App log level. Values: debug, info, warn, error, fatal, panic
 logLevel: debug
+
+# App engine name. Values: webview, chrome, hybrid
+engineName: webview
+
+# App engine config and options.
+engineConfig:
+  # min: Width and height are minimum bounds
+  # max: Width and height are maximum bounds
+  # fix: Window size can not be changed by a user
+  window_hint: "min"
+  window_width: 1024
+  window_height: 700

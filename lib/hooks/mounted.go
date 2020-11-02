@@ -5,9 +5,9 @@ import (
 )
 
 // App mounted hook.
-func Mounted(app *app.App) {
+func Mounted(a *app.App) error {
 
-	app.Log.Debug("---- HOOK: App mounted! ----")
+	a.Log.Info("---- HOOK: App mounted! ----")
 
-	// App created..
+	return nil
 }
