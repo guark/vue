@@ -1,7 +1,7 @@
 <template>
 	<div class="hello">
 		<h1 style="color:#5556e4;">{{ msg }}</h1>
-		<img style="width: 300px; border-radius: 5%;margin-bottom: 20px" :src="require('@/assets/img.png')">
+		<img style="width: 300px; border-radius: 5%;margin-bottom: 20px" :src="require('@/assets/icon.png')">
 		<div>
 			<button class="btn" @click="gcall()">Call Go Function!</button>
 			<button class="btn" @click="clipboardWrite()">Call Plugin (Write "guark" to clipboard)!</button>
