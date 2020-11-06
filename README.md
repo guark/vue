@@ -23,7 +23,7 @@ guark run
 guark build
 ```
 
-# Bundle
+## Bundle
 
 ```bash
 guark bundle
