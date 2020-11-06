@@ -9,6 +9,7 @@
 		UpgradeCode="{{ .GUID }}"
 		Version="{{ .Ver }}"
 	>
+		<!-- If you're on windows add: `Platform="x64"` to Package tag! -->
 		<Package
 			Id="*"
 			Comments="{{ .Description }}"
