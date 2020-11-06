@@ -1,5 +1,5 @@
 # Guark Vue Template
-Guark Vue.js template.
+Guark Vue.js app template.
 
 ![Guark Vue Template](https://i.imgur.com/RhU6bh7.png)
 
@@ -7,19 +7,24 @@ Guark Vue.js template.
 
 Create new empty directory and cd to it, and run:
 ```bash
-guark new --template vue
+guark init --template vue --mod github.com/username/appname
 ```
 
 ## Run dev app.
 
 Run dev app with vue hot reload:
 ```bash
-guark dev
+guark run
 ```
 
 ## Build
 
-Build you app bundle.
 ```bash
 guark build
+```
+
+# Bundle
+
+```bash
+guark bundle
 ```
