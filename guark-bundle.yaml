@@ -10,3 +10,4 @@ bundles:
     options:
       guid: d8cb43ce-0225-429c-850e-77debcb0fe99 # put your own windows UpgradeCode UUID here.
       template: app.wxs
+      #bindir: "c:\\Program Files (x86)\\Wix Toolset v3.11\\bin\\"
